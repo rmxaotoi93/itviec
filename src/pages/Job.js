@@ -32,7 +32,7 @@ export default function Job({job}) {
             </div>
             <div>
               {job.tags.map(tag => (
-                <Badge variant="secondary" className="badge-style">
+                <Badge variant="danger" className="badge-style" style={{marginRight:10}}>
                   {tag}
                 </Badge>
               ))}
@@ -41,11 +41,9 @@ export default function Job({job}) {
         </Col>
         <Col>
           <div className="date-location-box">
-            {job.isHotjob ? (
-              <div className="hotjob-label">Hot Job</div>
-            ) : (
-              <div></div>
-            )}
+            {job.isHotjob && (
+              <div style={{backgroundColor: "#ff9e34", color:'white'}} className="hotjob-label">Hot Job</div>
+            ) }
 
             <div className="jobcard-location">
               <div>{job.city}</div>

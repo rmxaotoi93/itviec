@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+.badgene span {
+  background-color: red
+}
+.benefit-list{
+  list-style: none;
+  float: left;
+  text-align: left;
+}
+.jobcard-location {
+  text-align: right;
+}
+.job-time{
+  text-align: right;
+}
+.hotjob-label{
+  background-color: #ff9e34;
+  color: white;
+}

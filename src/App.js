@@ -17,7 +17,6 @@ function App() {
       <Switch>
        
         <Route path="/jobs/:id" component={Details}/>
-        <Route path="/jobs" component={Jobs}/>
         <Route path="/login" component={Login}/>
         <Route path="/" component={Jobs}/>
         
