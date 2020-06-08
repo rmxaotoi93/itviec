@@ -8,7 +8,7 @@ import { useHistory } from "react-router-dom";
 export default function Job({job}) {
   let history = useHistory();
   const jobSelect = () => {
-    history.push(`/job/${job.id}`);
+    history.push(`/jobs/${job.id}`);
   };
 
     return (

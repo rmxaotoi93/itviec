@@ -9,7 +9,7 @@ import { useHistory } from "react-router-dom";
 export default function Details(props) {
     let history = useHistory();
     const jobSelect = () => {
-      history.push(`/job/${job.id}`);
+      history.push(`/jobs/${job.id}`);
     };
   
     const { id } = useParams();
