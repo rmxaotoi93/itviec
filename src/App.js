@@ -9,21 +9,13 @@ import Details from "./pages/Details"
 
 function App() {
   
-  // let [user,setUser] = useState(false)
 
-  // const ProtectedRoute = (props) => {
-  //   if (user.isAuthenticated === true) {
-  //     return <Route {...props} />;
-  //   } else {
-  //     return <Redirect to="/login" />;
-  //   }
-  // };
   return (
    
     <div className="App">
       
       <Switch>
-        {/* <ProtectedRoute path="/jobs/:id" render={(props) => <Details {...props}/>}/> */}
+       
         <Route path="/jobs/:id" component={Details}/>
         <Route path="/jobs" component={Jobs}/>
         <Route path="/login" component={Login}/>
