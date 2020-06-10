@@ -11,7 +11,7 @@ export default function Details(props) {
     const jobSelect = () => {
       history.push(`/jobs/${job.id}`);
     };
-  
+    
     const { id } = useParams();
     let [job, setJob] = useState(null);
     console.log({ props });
@@ -20,7 +20,7 @@ export default function Details(props) {
         let data = await fetch(url);
         let result = await data.json();
         setJob(result);
-        console.log('sẹtob',result);
+ 
         
       };
       useEffect(() => {
@@ -30,21 +30,21 @@ export default function Details(props) {
         return <div>Loading dât</div>;
       }
     return (
-       <Container>
-            <div className="job-content" onClick={() => jobSelect()}>
+       <Container style={{marginTop:100}}>
+            <div onClick={() => jobSelect()}>
     
     <Row  >
           <Col>
-            <div className="jobcard-logo">
+            <div >
               <img src={job.img} />
             </div>
           </Col>
           <Col xs={8}>
-            <div className="jobcard-descriptions">
-              <h2 className="jobcard-title">{job.title}</h2>
-              <div>$ {job.salary}</div>
-              <div>
-                <ul className="benefit-list">
+            <div>
+              <h2 >{job.title}</h2>
+              <div style={{float:'left'}}>$ {job.salary}</div>
+              <div> 
+                <ul >
                   {job.benefits.map(benefit => (
                     <li>{benefit}</li>
                   ))}
@@ -52,27 +52,33 @@ export default function Details(props) {
               </div>
               <div>
                 {job.tags.map(tag => (
-                  <Badge variant="danger" className="badge-style" style={{marginRight:10}}>
+                  <Badge variant="danger" >
                     {tag}
                   </Badge>
                 ))}
               </div>
+            
             </div>
           </Col>
           <Col>
             <div className="date-location-box">
               {job.isHotjob && (
-                <div className="hotjob-label">Hot Job</div>
+                <div>Hot Job</div>
               ) }
   
-              <div className="jobcard-location">
+              <div >
                 <div>{job.city}</div>
                 <div>District {job.district}</div>
               </div>
-              <div className="job-time">{moment(job.time).fromNow()}</div>
+              <div >{moment(job.time).fromNow()}</div>
             </div>
           </Col>
         </Row>
+        <div>
+              {job.description}
+               
+            </div>
+        <Button>Apply Now</Button>
    </div>
        </Container>
   );

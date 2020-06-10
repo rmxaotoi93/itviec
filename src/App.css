@@ -1,7 +1,7 @@
-.App {
-  text-align: center;
-}
 
+body{
+  background-color: bisque !important;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -12,7 +12,11 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+@media only screen and (max-width: 800px) {
+  body {
+    background-color: rgb(10, 52, 66) !important;
+  }
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -37,11 +41,14 @@
   }
 }
 
+body{
+  background-color: #61dafb;
+}
 .badgene span {
   background-color: red
 }
 .benefit-list{
-  list-style: none;
+  
   float: left;
   text-align: left;
 }
@@ -54,4 +61,38 @@
 .hotjob-label{
   background-color: #ff9e34;
   color: white;
+}
+.bgItviec{
+  background-color: #221f20;
+  height: 300px;
+}
+.logoIt{
+
+  margin-left: 50px;
+  margin-top: 20px;
+}
+.login{
+  width: 1000px;
+  height: 400px;
+  background-color: #ddd;
+  margin: 0 auto;
+  margin-top: 150px;
+  position: relative;
+}
+.logoLogin{
+  
+  width: 900px;
+  height: 60px;
+  background-color: #221f20;
+  margin: 0 auto;
+  
+}
+.form input {
+  width: 90%;
+  margin: 0 auto;
+  
+}
+.job-content{
+  padding: 30px 0;
+  background-color: white;
 }

@@ -3,8 +3,8 @@ import {Row} from 'react-bootstrap'
 import {Col} from 'react-bootstrap'
 import {Badge} from 'react-bootstrap'
 import moment from 'moment'
-import { useHistory } from "react-router-dom";
-
+import { useHistory, useLocation } from "react-router-dom";
+import '../App.css'
 export default function Job({job}) {
   let history = useHistory();
   const jobSelect = () => {
@@ -12,7 +12,7 @@ export default function Job({job}) {
   };
 
     return (
-      <div className="job-content" onClick={() => jobSelect()}>
+      <div className="job-content" onClick={() => jobSelect()} style={{margin: 50}}>
   <Row>
         <Col>
           <div className="jobcard-logo">
@@ -30,14 +30,17 @@ export default function Job({job}) {
                 ))}
               </ul>
             </div>
+            
             <div>
               {job.tags.map(tag => (
-                <Badge variant="danger" className="badge-style" style={{marginRight:10}}>
+                <Badge variant="success" className="badge-style" style={{marginRight:10}}>
                   {tag}
                 </Badge>
               ))}
             </div>
+            
           </div>
+          
         </Col>
         <Col>
           <div className="date-location-box">
@@ -52,6 +55,7 @@ export default function Job({job}) {
             <div className="job-time">{moment(job.time).fromNow()}</div>
           </div>
         </Col>
+        
       </Row>
  </div>
     )
