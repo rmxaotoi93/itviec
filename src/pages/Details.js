@@ -30,56 +30,62 @@ export default function Details(props) {
         return <div>Loading dât</div>;
       }
     return (
-       <Container style={{marginTop:100}}>
-            <div onClick={() => jobSelect()}>
     
-    <Row  >
-          <Col>
-            <div >
-              <img src={job.img} />
-            </div>
-          </Col>
-          <Col xs={8}>
+    <div className="job-content" onClick={() => jobSelect()} style={{margin: 50}}>
+  <Row>
+        <Col>
+          <div className="jobcard-logo">
+            <img src={job.img} />
+          </div>
+        </Col>
+        <Col xs={7} >
+          <div className="jobcard-descriptions">
+            <h2 className="jobcard-title">{job.title}</h2>
+            <div>$ {job.salary}</div>
             <div>
-              <h2 >{job.title}</h2>
-              <div style={{float:'left'}}>$ {job.salary}</div>
-              <div> 
-                <ul >
-                  {job.benefits.map(benefit => (
-                    <li>{benefit}</li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                {job.tags.map(tag => (
-                  <Badge variant="danger" >
-                    {tag}
-                  </Badge>
+              <ul className="benefit-list" style={{width:'100%'}}>
+                {job.benefits.map(benefit => (
+                  <li>{benefit}</li>
                 ))}
-              </div>
+              </ul>
+            </div>
             
+            
+            
+          </div>
+          <div>
+              {job.tags.map(tag => (
+                <Badge variant="success" className="badge-style" style={{marginRight:10}}>
+                  {tag}
+                </Badge>
+              ))}
             </div>
-          </Col>
-          <Col>
-            <div className="date-location-box">
-              {job.isHotjob && (
-                <div>Hot Job</div>
-              ) }
-  
-              <div >
-                <div>{job.city}</div>
-                <div>District {job.district}</div>
-              </div>
-              <div >{moment(job.time).fromNow()}</div>
-            </div>
-          </Col>
-        </Row>
-        <div>
+            <div>
               {job.description}
                
             </div>
-        <Button>Apply Now</Button>
-   </div>
-       </Container>
+            <Button>Apply Now</Button>
+        </Col>
+        <Col >
+          <div className="date-location-box">
+            {job.isHotjob && (
+              <div style={{backgroundColor: "#ff9e34", color:'white', textAlign:'center', marginBottom:20}} className="hotjob-label">Hot Job</div>
+            ) }
+
+            <div className="jobcard-location">
+              <div>{job.city}</div>
+              <div>District {job.district}</div>
+            </div>
+            <div className="job-time">{moment(job.time).fromNow()}</div>
+          </div>
+        </Col>
+   
+      </Row>
+     
+ </div>
+        
+    
+   
+ 
   );
 }

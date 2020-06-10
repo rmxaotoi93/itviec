@@ -5,6 +5,8 @@ import {Badge} from 'react-bootstrap'
 import moment from 'moment'
 import { useHistory, useLocation } from "react-router-dom";
 import '../App.css'
+
+
 export default function Job({job}) {
   let history = useHistory();
   const jobSelect = () => {
@@ -19,33 +21,33 @@ export default function Job({job}) {
             <img src={job.img} />
           </div>
         </Col>
-        <Col xs={8}>
+        <Col xs={7} >
           <div className="jobcard-descriptions">
             <h2 className="jobcard-title">{job.title}</h2>
             <div>$ {job.salary}</div>
             <div>
-              <ul className="benefit-list">
+              <ul className="benefit-list" style={{width:'100%'}}>
                 {job.benefits.map(benefit => (
                   <li>{benefit}</li>
                 ))}
               </ul>
             </div>
             
-            <div>
+            
+            
+          </div>
+          <div>
               {job.tags.map(tag => (
                 <Badge variant="success" className="badge-style" style={{marginRight:10}}>
                   {tag}
                 </Badge>
               ))}
             </div>
-            
-          </div>
-          
         </Col>
-        <Col>
+        <Col >
           <div className="date-location-box">
             {job.isHotjob && (
-              <div style={{backgroundColor: "#ff9e34", color:'white'}} className="hotjob-label">Hot Job</div>
+              <div style={{backgroundColor: "#ff9e34", color:'white', textAlign:'center', marginBottom:20}} className="hotjob-label">Hot Job</div>
             ) }
 
             <div className="jobcard-location">

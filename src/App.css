@@ -12,11 +12,11 @@ body{
     animation: App-logo-spin infinite 20s linear;
   }
 }
-@media only screen and (max-width: 800px) {
+/* @media only screen and (max-width: 800px) {
   body {
     background-color: rgb(10, 52, 66) !important;
   }
-}
+} */
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -77,15 +77,26 @@ body{
   background-color: #ddd;
   margin: 0 auto;
   margin-top: 150px;
-  position: relative;
+  
 }
 .logoLogin{
-  
-  width: 900px;
+  margin: 0 auto;
+  width: 600px;
   height: 60px;
   background-color: #221f20;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+
+}
+.logoLogin img{
+  display: flex;
+  justify-content: center;
   
+}
+.jobcard-logo{
+ 
+  display: flex;
+  justify-content: center;
 }
 .form input {
   width: 90%;
@@ -95,4 +106,8 @@ body{
 .job-content{
   padding: 30px 0;
   background-color: white;
+}
+.date-location-box{
+  margin-right: 50px;
+  
 }
